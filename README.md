@@ -124,10 +124,6 @@ TOTAL    : ₹312.90
 Thank you! Visit again.
 ```
 
-## Screenshots
-
-Add screenshots of the menu, cart and final bill here.
-
 ## Author
 
 Tapish, B.Tech CSE, VIT Bhopal
