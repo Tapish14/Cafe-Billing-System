@@ -1,0 +1,133 @@
+# Cafe Billing System
+
+A simple command-line billing program for a small cafe, written in Python. You pick items from a menu, add or remove them from a cart, and get a bill with GST at the end.
+
+## Overview
+
+I made this as my first-year project to practice basic Python. The program shows a menu of 10 items, lets the user build an order, and prints a final bill with subtotal, 5% GST and total. Everything runs in the terminal and needs no extra libraries.
+
+## Features
+
+- Menu with 10 items and their prices (in ₹)
+- Add items by typing the name (not case sensitive)
+- Remove items or reduce their quantity
+- View the cart or menu at any time
+- Input checking for quantity (no letters, zero or negative numbers)
+- Final bill with subtotal, 5% GST and total
+- Won't generate a bill if the cart is empty
+
+## Technologies Used
+
+- Python 3
+- Concepts used: dictionaries, functions, `while` loop, `for` loop, `if/elif/else`, `break`, string methods (`strip`, `title`, `isdigit`)
+
+## How to Run
+
+1. Install Python 3 from python.org if you don't have it.
+2. Download or clone this repository:
+   ```
+   git clone <your-repo-link>
+   cd <repo-folder>
+   ```
+3. Run the program:
+   ```
+   python main.py
+   ```
+   (Replace `main.py` with your file name.)
+
+## How to Use
+
+| Command | What it does |
+|---|---|
+| Item name (e.g. `Pizza`) | Adds the item, then asks for quantity |
+| `remove` | Removes an item or reduces its quantity |
+| `cart` | Shows what is in your cart |
+| `menu` | Shows the menu again |
+| `done` | Prints the bill and exits |
+
+## Testing
+
+I tested it by hand with these cases:
+
+- Adding a valid item with a valid quantity
+- Adding the same item twice (quantity should add up)
+- Entering `abc`, `0` or `-2` as quantity
+- Typing an item that isn't on the menu
+- Removing an item that isn't in the cart
+- Removing more than the quantity in the cart (item should get deleted)
+- Typing `done` with an empty cart
+- Checking the bill total by hand against the program's output
+
+## Output
+
+Sample run (adding items, a wrong quantity, an unknown item, removing an item, and the final bill):
+
+```
+------ MENU ------
+Burger          - ₹70
+Pizza           - ₹300
+Noodle          - ₹100
+Chilly Paneer   - ₹210
+Virgin Mojito   - ₹79
+Cold Coffee     - ₹79
+Ice Tea         - ₹79
+Milk Shake      - ₹99
+Coffee          - ₹79
+Tea             - ₹49
+
+Type an item name to add it.
+Other commands: remove, cart, menu, done
+
+Enter item name or command: burger
+Enter quantity: 2
+2 x Burger added!
+
+Enter item name or command: pizza
+Enter quantity: 1
+1 x Pizza added!
+
+Enter item name or command: cold coffee
+Enter quantity: abc
+Please enter a valid whole number!
+
+Enter item name or command: sandwich
+Item not found. Check the spelling.
+
+Enter item name or command: cart
+
+------ YOUR CART ------
+Burger          x2  = ₹140
+Pizza           x1  = ₹300
+
+Enter item name or command: remove
+
+------ YOUR CART ------
+Burger          x2  = ₹140
+Pizza           x1  = ₹300
+Enter item name to remove: pizza
+Enter quantity: 1
+Cart updated.
+
+Enter item name or command: cold coffee
+Enter quantity: 2
+2 x Cold Coffee added!
+
+Enter item name or command: done
+
+========= BILL =========
+Burger          x2  = ₹140
+Cold Coffee     x2  = ₹158
+------------------------
+Subtotal : ₹298.00
+GST (5%) : ₹14.90
+TOTAL    : ₹312.90
+Thank you! Visit again.
+```
+
+## Screenshots
+
+Add screenshots of the menu, cart and final bill here.
+
+## Author
+
+Tapish, B.Tech CSE, VIT Bhopal
